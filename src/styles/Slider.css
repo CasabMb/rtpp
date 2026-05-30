@@ -1,46 +1,58 @@
 .slider-container {
-  position: relative;
   width: 100%;
+  max-width: 100%;
   overflow: hidden;
+  overflow-x: clip;
+  position: relative;
+  transform: translateY(45px);
 }
 
 .slider {
   --height: 80px;
-  position: relative;
   width: 100%;
+  max-width: 100%;
   height: var(--height);
+  position: relative;
   background-color: var(--principal-color);
-  mask-image: linear-gradient(to right, transparent, #508A8F 5%, #508A8F 95%, transparent);
-  box-shadow:
-    6px 8px 12px rgba(0, 0, 0, 0.2),
-    -15px -8px 12px rgb(255, 255, 255);
-  display: flex;
-  align-items: center; /* ✅ centre le flux verticalement */
-  justify-content: center;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #508A8F 5%,
+    #508A8F 95%,
+    transparent
+  );
+  box-shadow: 6px 8px 12px #0003, -15px -8px 12px #fff;
   overflow: hidden;
+  overflow-x: clip;
+  display: flex;
+  align-items: center;
   z-index: 10;
   padding: 0;
   margin-bottom: 15px;
   margin-top: 8px;
+  contain: paint;
+  overflow: hidden;
+
 }
 
 .slider .list {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: calc(var(--width) * var(--quantity));
+  overflow: hidden;
 }
 
 .slider .item {
   position: absolute;
-  right: 110%;
+  top: 0;
+  left: 100%;
   width: var(--width);
   height: var(--height);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Poppins-Light', sans-serif;
+  font-family: Poppins-Light, sans-serif;
   font-size: 1.3rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -48,48 +60,50 @@
   opacity: 0.9;
   animation: autoRun 20s linear infinite;
   animation-delay: calc((20s / var(--quantity)) * (var(--position) - 1));
-  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.slider:hover .item  {
+.slider:hover .item {
   animation-play-state: paused;
 }
 
 @keyframes autoRun {
   from {
-    right: 100%;
+    transform: translateX(0);
   }
+
   to {
-    right: calc(var(--width) * -1);
+    transform: translateX(calc((var(--width) * var(--quantity) + var(--width)) * -1));
   }
 }
 
-/* === Responsive === */
 @media (max-width: 920px) {
   .slider-container {
-  transform: translateY(27px);
-}
+    transform: translateY(5px);
+  }
+
   .slider {
     --height: 60px;
   }
+
   .slider .item {
     font-size: 1.1rem;
   }
 }
 
 @media (max-width: 600px) {
-    .slider-container {
-  transform: translateY(29px);
-}
+  .slider-container {
+    transform: translateY(2px);
+  }
+
   .slider {
     --height: 50px;
   }
+
   .slider .item {
+    width: var(--width);
     font-size: 1rem;
+    animation-duration: 25s;
+    animation-delay: calc((25s / var(--quantity)) * (var(--position) - 1));
   }
-  .slider .item {
-    width: 200px;
-  animation: autoRun 25s linear infinite;
-  animation-delay: calc((25s / var(--quantity)) * (var(--position) - 1));
 }
-}
+

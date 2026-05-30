@@ -1,6 +1,16 @@
 #expertise {
+  width: 100%;
+  max-width: 100%;
   padding: 86px 24px 96px;
   background-color: var(--secondary-color);
+  overflow: hidden;
+}
+
+.expertise-intro,
+.expertise-stats,
+.expertise-description,
+.expertise-label {
+  max-width: 100%;
 }
 
 .expertise-intro {
@@ -141,7 +151,7 @@
 
 @media (max-width: 480px) {
   #expertise {
-    padding-inline: 14px;
+    padding: 48px 14px 60px;
   }
 
   .expertise-text h2 {
@@ -149,14 +159,25 @@
   }
 
   .expertise-description {
+    width: 100%;
+    max-width: 100%;
     font-size: 21px;
   }
 
   .expertise-label {
     width: 100%;
+    max-width: 100%;
+    padding: 7px 10px;
+  }
+
+  .expertise-stats {
+    width: 100%;
+    max-width: 100%;
   }
 
   .expertise-stats article {
+    width: 100%;
+    max-width: 100%;
     border-radius: 22px;
   }
 }

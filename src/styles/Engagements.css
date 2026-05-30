@@ -1,4 +1,7 @@
 #engagements {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
   padding: 48px 24px 84px;
   background-color: var(--principal-color);
   text-align: center;
@@ -112,17 +115,38 @@
 }
 
 @media (max-width: 460px) {
+  #engagements {
+    padding: 40px 14px 60px;
+    overflow: hidden;
+  }
+
   #engagements h3 {
     width: 100%;
+    max-width: 100%;
+    padding: 6px 10px;
     font-size: 14px;
+    line-height: 1.2;
   }
 
   .engagements-title {
+    width: 100%;
+    max-width: 100%;
     font-size: 24px;
   }
 
   .engagements-title strong {
     font-size: 38px;
+  }
+
+  .engagements-grid {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .engagement-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 28px 20px 34px;
   }
 
   .engagement-card p {

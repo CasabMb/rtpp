@@ -1,9 +1,15 @@
 #contact {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
   position: relative;
   display: grid;
   grid-template-columns: 44% 56%;
   min-height: 850px;
   background-color: var(--secondary-color);
+}
+.contact-item > div:last-child {
+  min-width: 0;
 }
 
 .contact-title {
@@ -59,12 +65,15 @@
 }
 
 .contact-item a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
   text-decoration: none;
   color: var(--principal-color);
   font-size: clamp(20px, 2vw, 24px);
   &:hover{
     text-shadow: 2px 2px 6px var(--third-color);
   }
+  
 }
 
 .socials {
@@ -187,11 +196,28 @@
 }
 
 @media (max-width: 520px) {
+  #contact {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
   .contact-title {
+    width: calc(100% - 28px);
+    max-width: 405px;
     font-size: 32px;
+    padding: 4px 12px;
+  }
+
+  .contact-info {
+    width: 100%;
+    max-width: 100%;
+    padding: 125px 14px 55px;
   }
 
   .contact-item {
+    width: 100%;
+    max-width: 100%;
     align-items: flex-start;
     gap: 16px;
   }
@@ -199,16 +225,37 @@
   .contact-icon {
     width: 64px;
     height: 64px;
-    flex-basis: 64px;
+    flex: 0 0 64px;
     font-size: 28px;
   }
 
+  .contact-item h3 {
+    font-size: 20px;
+  }
+
+  .contact-item a {
+    display: inline-block;
+    max-width: 100%;
+    font-size: 18px;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
   .socials {
+    width: 100%;
     justify-content: center;
     flex-wrap: wrap;
   }
 
+  .contact-form-wrapper {
+    width: 100%;
+    max-width: 100%;
+    padding: 55px 14px;
+  }
+
   .contact-form {
+    width: 100%;
+    max-width: 100%;
     padding: 48px 22px 54px;
   }
 }
