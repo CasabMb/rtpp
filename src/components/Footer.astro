@@ -1,0 +1,34 @@
+---
+import '../styles/Footer.css';
+import { Image } from 'astro:assets';
+import logo from '../assets/Images/Logo-RTPP-tiers-payant-sein-et-marne.png';
+---
+
+
+<footer id="footer">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <Image src={logo} alt="logo rtpp" /> 
+        </div>
+
+        <nav class="footer-nav" aria-label="Navigation du footer">
+            <a href="#services">Services</a>
+            <a href="#engagements">Engagements</a>
+            <a href="#expertise">A propos</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="footer-line"></div>
+
+        <div class="footer-bottom">
+            <div class="footer-legal">
+                <a href="#">Mentions légales</a>
+                <span>|</span>
+                <a href="#">Politique de confidentialité</a>
+                <span>|</span>
+            </div>
+
+        <p>© RTPP 2026. Tout droit réservé</p>
+        </div>
+    </div>
+</footer>

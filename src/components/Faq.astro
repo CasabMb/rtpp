@@ -1,0 +1,107 @@
+---
+import '../styles/Faq.css';
+---
+
+
+<section id="faq">
+    <h3>Questions fréquentes sur la gestion du tiers payant</h3>
+
+    <div class="faq-list">
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>Intervenez-vous à distance ou sur place ?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    ➺   Les deux ! selon vos besoins. Je propose u n accompagnement à distance partout e n France, 
+                    et des interventions sur site selon votre localisation.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>Y a-t-il un engagement de durée ?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    ➺   Non. Mes prestations sont sans engagement : vous restez libre à tout moment.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>Comment suivez-vous les rejets et impayés ?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    ➺   Je transmets un compte rendu régulier (taux de rejet, impayés récupérés, dossiers en attente) 
+                    pour une gestion claire et facile à suivre 
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>Pouvez-vous reprendre des dossiers anciens ?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                    ➺   Oui, je peux reprendre le passif jusqu’à 24 mois + le trimestre en cours, 
+                    conformément aux délais de forclusion en vigueur
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item active">
+            <button class="faq-question">
+                <span>Et la confidentialité des données ?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>
+                ➺ Je travaille dans un environnement sécurisé, conforme aux exigences
+                liées aux données de santé.
+                </p>
+                <p>
+                Toutes les informations traitées sont manipulées avec la plus grande
+                rigueur :
+                </p>
+                <ul>
+                <li>accès limité aux seules personnes autorisées</li>
+                <li>connexions protégées et outils sécurisés</li>
+                <li>aucune transmission ou conservation inutile des documents</li>
+                <li>respect strict du secret professionnel et des obligations légales</li>
+                </ul>
+                <p>
+                L'objectif : garantir une protection maximale des données de votre
+                officine et de vos patients.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+        const button = item.querySelector(".faq-question");
+
+        button?.addEventListener("click", () => {
+        faqItems.forEach((otherItem) => {
+            if (otherItem !== item) {
+            otherItem.classList.remove("active");
+            }
+        });
+
+        item.classList.toggle("active");
+        });
+    });
+</script>
+

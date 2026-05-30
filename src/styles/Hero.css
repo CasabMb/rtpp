@@ -1,0 +1,154 @@
+
+#hero-section{
+    color: var(--secondary-color);
+    background-image: url(../assets/Images/hero_img_rptt_seine_et_marne.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 99vw;
+    height: 100vh;
+    margin-top: -3.5%;
+    margin-bottom: -3%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero_items{
+    position: absolute;
+    width: 70%;
+    top: 30%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    
+}
+.hero_items h3{
+    font-size: var(--text-xs);
+}
+.hero_cta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+}
+.hero_cta button{
+    padding: 15px 20px;
+    font-size: var(--text-m);
+    border-radius: var(--border-l);
+    cursor: pointer;
+    &:hover{
+        background-color: var(--third-color);
+        color: var(--secondary-color);
+    }
+}
+.cta1{
+    border: none;
+    color: var(--secondary-color);
+    background-color: var(--principal-color);
+}
+.cta2{
+    color: var(--principal-color);
+    background-color: var(--secondary-color);
+    border: 2px solid var(--principal-color);
+    &:hover{
+        border:  2px solid var(--third-color);
+    }
+}
+
+@media (max-width: 1024px) {
+  #hero-section {
+    width: 100%;
+    min-height: 90vh;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero_items {
+    width: 82%;
+    top: 28%;
+    gap: 2.5rem;
+  }
+
+  .hero_cta button {
+    padding: 13px 18px;
+    font-size: var(--text-s);
+  }
+}
+
+@media (max-width: 768px) {
+  #hero-section {
+    min-height: 82vh;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero_items {
+    position: relative;
+    top: auto;
+    width: min(90%, 560px);
+    min-height: 82vh;
+    padding: 120px 0 70px;
+    gap: 2rem;
+  }
+
+  .hero_items h1,
+  .hero_items h2 {
+    font-size: clamp(32px, 8vw, 48px);
+    line-height: 1.1;
+  }
+
+  .hero_items h3 {
+    font-size: var(--text-xs);
+    line-height: 1.4;
+  }
+
+  .hero_cta {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero_cta button {
+    width: min(100%, 320px);
+    padding: 13px 18px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero-section {
+    min-height: 78vh;
+    background-position: center top;
+  }
+
+  .hero_items {
+    width: calc(100% - 32px);
+    min-height: 78vh;
+    padding: 100px 0 56px;
+    gap: 1.5rem;
+  }
+
+  .hero_items h1,
+  .hero_items h2 {
+    font-size: 32px;
+  }
+
+  .hero_items h3 {
+    font-size: 13px;
+  }
+
+  .hero_cta button {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+}

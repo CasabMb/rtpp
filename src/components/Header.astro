@@ -1,0 +1,48 @@
+---
+import '../styles/Header.css';
+import { Image } from 'astro:assets';
+import logo from '../assets/Images/Logo-RTPP-tiers-payant-sein-et-marne.png';
+---
+
+<header>
+    <div class="header_items">
+        <div class="header_logo">
+            <Image src={logo} alt="logo rtpp" />
+        </div>
+
+        <button class="burger_menu" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+        </button>
+
+        <nav>
+            <ul>
+                <li><a href="#services">Service</a></li>
+                <li><a href="#engagements">Engagements</a></li>
+                <li><a href="#expertise">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<script>
+    const burger = document.querySelector('.burger_menu');
+    const nav = document.querySelector('nav');
+    const links = document.querySelectorAll('nav a');
+
+    burger?.addEventListener('click', () => {
+        const isOpen = nav?.classList.toggle('nav_open');
+        burger.classList.toggle('burger_open');
+        burger.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    links.forEach((link) => {
+        link.addEventListener('click', () => {
+        nav?.classList.remove('nav_open');
+        burger?.classList.remove('burger_open');
+        burger?.setAttribute('aria-expanded', 'false');
+        });
+    });
+</script>

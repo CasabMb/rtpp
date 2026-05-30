@@ -1,0 +1,120 @@
+#section_probleme{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    gap: 2rem;
+}
+.probleme_btns button{
+    border: none;
+    padding: 10px 15px;
+    background-color: var(--principal-color);
+    color: var(--secondary-color);
+    font-size: var(--text-s);
+    border-radius: var(--border-s);
+}
+.probleme_btns{
+    display: flex;
+    gap: 3rem;
+}
+#section_probleme h2{
+    font-size: var(--text-xl);
+    margin: 2rem auto 1rem auto;
+    width: 70%;
+}
+#section_probleme p:first-of-type{
+    font-size: var(--text-m);
+}
+#section_probleme p:last-of-type{
+    width: 50%;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+  #section_probleme {
+    gap: 1.8rem;
+    padding: 0 24px;
+  }
+
+  #section_probleme h2 {
+    width: 85%;
+    font-size: clamp(30px, 4vw, var(--text-xl));
+  }
+
+  #section_probleme p:last-of-type {
+    width: 70%;
+  }
+
+  .probleme_btns {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #section_probleme {
+    gap: 1.5rem;
+    padding: 0 18px;
+    text-align: center;
+  }
+
+  #section_probleme h2 {
+    width: 100%;
+    margin: 2rem auto 0.8rem;
+    font-size: 30px;
+    line-height: 1.25;
+  }
+
+  #section_probleme p:first-of-type {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  #section_probleme p:last-of-type {
+    width: 90%;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .probleme_btns {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .probleme_btns button {
+    font-size: 18px;
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  #section_probleme {
+    padding: 0 14px;
+    gap: 1.2rem;
+  }
+
+  #section_probleme h2 {
+    font-size: 26px;
+  }
+
+  #section_probleme p:first-of-type {
+    font-size: 18px;
+  }
+
+  #section_probleme p:last-of-type {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .probleme_btns {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+  }
+
+  .probleme_btns button {
+    width: 100%;
+    font-size: 16px;
+  }
+}

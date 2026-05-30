@@ -1,0 +1,78 @@
+#footer {
+  background-color: var(--principal-color);
+  padding: 86px 0 72px;
+  color: var(--secondary-color);
+}
+
+.footer-container {
+  width: min(1236px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.footer-logo {
+  width: 205px;
+  height: 96px;
+  margin-bottom: 24px;
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.footer-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-left: 14px;
+  margin-bottom: 66px;
+}
+
+.footer-nav a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 20px;
+  transition: opacity 0.25s ease;
+}
+
+.footer-nav a:hover {
+  opacity: 0.7;
+}
+
+.footer-line {
+  width: 100%;
+  height: 2px;
+  margin-bottom: 28px;
+  background-color: rgba(255, 249, 245, 0.5);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.footer-legal a,
+.footer-legal span,
+.footer-bottom p {
+  color: var(--secondary-color);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  text-decoration: underline;
+}
